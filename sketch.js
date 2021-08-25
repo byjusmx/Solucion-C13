@@ -20,7 +20,7 @@ function preload(){
 function setup() {
   createCanvas(400, 400);
   
-  //creating background
+  //Crear el fondo
   scene = createSprite(0,0,400,400);
   scene.addImage(backgroundImage);
   scene.scale = 2.5
@@ -35,23 +35,23 @@ function setup() {
 
 function draw() {
  background(0);
-  // moving ground
+  // suelo en movimiento
     scene.velocityX = -3 
 
     if (scene.x < 0){
       scene.x = scene.width/2;
     }
   
-  //moving bow
+  //arco en movimiento
   bow.y = World.mouseY
   
-   // release arrow when space key is pressed
+   // suelta la flecha cuando se presione la tecla de espacio
   if (keyDown("space")) {
     createArrow();
     
   }
    
-  //creating continous enemies
+  //creando enemigos continuos
   var select_balloon = Math.round(random(1,4));
   
   if (World.frameCount % 100 == 0) {
@@ -71,7 +71,7 @@ function draw() {
 }
 
 
-// Creating  arrows for bow
+// creando flechas para el arco
  function createArrow() {
   var arrow= createSprite(100, 100, 60, 10);
   arrow.addImage(arrowImage);
